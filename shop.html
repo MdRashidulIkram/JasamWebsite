@@ -5,56 +5,262 @@
   <title>Shop · Jasam Global Trading LLC</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Shop products from Jasam Global Trading LLC." />
+  <meta name="theme-color" content="#070707" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Jost:wght@400;500;600&display=swap" rel="stylesheet" />
+
   <style>
     :root {
-      --navy: #0f2a44;
-      --blue: #1f4fd8;
-      --slate: #475569;
-      --light: #f8fafc;
-      --border: #e5e7eb;
-      --card: #ffffff;
+      --bg: #070707;
+      --panel: #0f0f0e;
+      --panel-2: #151412;
+      --gold: #d6ab5c;
+      --gold-light: #f2d78f;
+      --gold-dark: #8f6a25;
+      --text: #e8e1d0;
+      --muted: #a69d8a;
+      --line: rgba(214, 171, 92, 0.28);
+      --gold-grad: linear-gradient(180deg, #f6dd9b 0%, #d9ac56 48%, #a67829 100%);
+      --serif: "Cormorant Garamond", "Cormorant", Georgia, "Times New Roman", serif;
+      --sans: "Jost", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
     }
+
+    * { box-sizing: border-box; }
+
     body {
       margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-      background: var(--light);
-      color: #1f2937;
-      line-height: 1.6;
+      font-family: var(--sans);
+      background:
+        radial-gradient(1100px 520px at 85% -8%, rgba(214, 171, 92, 0.08), transparent 60%),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.65;
     }
-    nav { background: #0b1f33; color: white; }
+
+    ::selection { background: rgba(214, 171, 92, 0.35); color: #fff; }
+
+    a { color: var(--gold); text-decoration: none; }
+    a:hover { color: var(--gold-light); text-decoration: underline; }
+    a:focus-visible, button:focus-visible {
+      outline: 2px solid var(--gold-light);
+      outline-offset: 3px;
+    }
+
+    /* Top Navigation */
+    nav {
+      background: #050505;
+      color: var(--text);
+      border-bottom: 1px solid var(--line);
+    }
+
     .nav-inner {
-      max-width: 1000px; margin: 0 auto; padding: 14px 20px;
-      display: flex; justify-content: space-between; align-items: center; font-size: 14px;
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 16px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      font-size: 12px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
     }
-    .nav-inner a { color: #dbeafe; }
-    header { background: linear-gradient(135deg, var(--navy), #123a63); color: white; }
-    .header-inner { max-width: 1000px; margin: 0 auto; padding: 40px 20px; }
-    h1 { margin: 0; font-size: 30px; letter-spacing: 0.3px; }
-    .tagline { margin-top: 8px; font-size: 15px; color: #dbeafe; }
+
+    .nav-inner strong {
+      font-family: var(--serif);
+      font-size: 17px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      color: var(--gold);
+    }
+
+    .nav-inner a { font-weight: 600; color: var(--gold-light); }
+
+    /* Header */
+    header {
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 82% 45%, rgba(214, 171, 92, 0.16), transparent 52%),
+        linear-gradient(135deg, #0a0a0a 0%, #111010 55%, #060606 100%);
+      border-bottom: 1px solid var(--line);
+      color: var(--text);
+    }
+
+    header::before {
+      content: "";
+      position: absolute;
+      right: -150px;
+      top: -140px;
+      width: 420px;
+      height: 420px;
+      border-radius: 50%;
+      border: 1px solid rgba(214, 171, 92, 0.38);
+      background: radial-gradient(circle at 35% 35%, rgba(214, 171, 92, 0.12), transparent 62%);
+      box-shadow: inset 0 0 90px rgba(214, 171, 92, 0.08);
+      pointer-events: none;
+    }
+
+    header::after {
+      content: "";
+      position: absolute;
+      right: -90px;
+      bottom: -90px;
+      width: 520px;
+      height: 150px;
+      border-radius: 50%;
+      border-top: 3px solid rgba(214, 171, 92, 0.75);
+      transform: rotate(-16deg);
+      pointer-events: none;
+    }
+
+    .header-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 48px 20px;
+    }
+
+    h1 {
+      margin: 0;
+      font-family: var(--serif);
+      font-weight: 700;
+      font-size: clamp(30px, 5vw, 40px);
+      line-height: 1.12;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      background: var(--gold-grad);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .tagline {
+      position: relative;
+      margin-top: 14px;
+      padding-top: 18px;
+      font-size: 12.5px;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    .tagline::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 72px;
+      height: 2px;
+      background: linear-gradient(90deg, var(--gold), transparent);
+    }
+
     .container { max-width: 1000px; margin: 0 auto; padding: 48px 20px; }
-    h2 { font-size: 22px; margin-bottom: 18px; color: var(--navy); }
-    p { font-size: 15px; color: var(--slate); margin-bottom: 12px; }
+
+    p { font-size: 15.5px; color: var(--text); margin: 0 0 12px; }
+
     .grid {
       display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 22px;
     }
+
+    /* Product cards */
     .card {
-      background: var(--card); border: 1px solid var(--border); border-radius: 10px;
-      padding: 22px; box-shadow: 0 2px 6px rgba(0,0,0,0.04); display: flex; flex-direction: column;
+      background: linear-gradient(180deg, var(--panel-2), var(--panel));
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 22px;
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.03);
+      display: flex;
+      flex-direction: column;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
     }
+
+    .card:hover {
+      border-color: rgba(214, 171, 92, 0.6);
+      box-shadow: 0 16px 38px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(214, 171, 92, 0.12);
+    }
+
     .card.unavailable { opacity: 0.55; }
-    .card h3 { font-size: 16px; margin: 0 0 8px; color: var(--navy); line-height: 1.35; min-height: 44px; }
-    .price { font-size: 20px; font-weight: 700; color: var(--navy); margin: 4px 0 14px; }
-    .stock { font-size: 13px; color: var(--slate); margin-bottom: 14px; }
+
+    .card h3 {
+      font-family: var(--sans);
+      font-size: 16px;
+      font-weight: 500;
+      margin: 0 0 8px;
+      color: var(--text);
+      line-height: 1.4;
+      min-height: 44px;
+    }
+
+    .price {
+      font-family: var(--serif);
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--gold-light);
+      margin: 4px 0 10px;
+    }
+
+    .stock {
+      font-size: 12px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 16px;
+    }
+
     .buy {
-      background: var(--blue); color: white; border: none; padding: 11px 20px;
-      font-size: 14px; border-radius: 6px; cursor: pointer; text-align: center;
-      text-decoration: none; display: inline-block; margin-top: auto;
+      background: linear-gradient(180deg, #f0d083 0%, #cf9f46 58%, #a77a2b 100%);
+      color: #0b0a08;
+      border: none;
+      padding: 12px 20px;
+      font-family: var(--sans);
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      border-radius: 4px;
+      cursor: pointer;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: auto;
+      box-shadow: 0 6px 18px rgba(214, 171, 92, 0.18);
+      transition: filter 0.15s ease;
     }
-    .buy:hover { background: #1d4ed8; }
+
+    .buy:hover { color: #0b0a08; filter: brightness(1.08); text-decoration: none; }
+
     .buy.disabled {
-      background: #cbd5e1; color: #64748b; cursor: not-allowed; pointer-events: none;
+      background: #1a1916;
+      color: #7b7360;
+      border: 1px solid rgba(214, 171, 92, 0.15);
+      box-shadow: none;
+      cursor: not-allowed;
+      pointer-events: none;
     }
-    footer { background: #0b1f33; color: #cbd5e1; text-align: center; padding: 28px 20px; font-size: 14px; }
+
+    footer {
+      background: #050505;
+      color: var(--muted);
+      text-align: center;
+      padding: 30px 20px;
+      font-size: 12.5px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      border-top: 1px solid var(--line);
+    }
+
+    @media (max-width: 600px) {
+      .header-inner { padding: 40px 20px; }
+      header::before { opacity: 0.55; right: -220px; }
+      header::after { opacity: 0.55; }
+    }
   </style>
 </head>
 <body>

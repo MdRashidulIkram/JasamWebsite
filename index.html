@@ -5,63 +5,161 @@
   <title>Jasam Global Trading LLC</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Jasam Global Trading LLC – U.S.-based wholesale import and export company." />
+  <meta name="theme-color" content="#070707" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Jost:wght@400;500;600&display=swap" rel="stylesheet" />
 
   <style>
     :root {
-      --navy: #0f2a44;
-      --blue: #1f4fd8;
-      --slate: #475569;
-      --light: #f8fafc;
-      --border: #e5e7eb;
-      --card: #ffffff;
+      --bg: #070707;
+      --panel: #0f0f0e;
+      --panel-2: #151412;
+      --gold: #d6ab5c;
+      --gold-light: #f2d78f;
+      --gold-dark: #8f6a25;
+      --text: #e8e1d0;
+      --muted: #a69d8a;
+      --line: rgba(214, 171, 92, 0.28);
+      --gold-grad: linear-gradient(180deg, #f6dd9b 0%, #d9ac56 48%, #a67829 100%);
+      --serif: "Cormorant Garamond", "Cormorant", Georgia, "Times New Roman", serif;
+      --sans: "Jost", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
     }
+
+    * { box-sizing: border-box; }
 
     body {
       margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-      background: var(--light);
-      color: #1f2937;
-      line-height: 1.6;
+      font-family: var(--sans);
+      background:
+        radial-gradient(1100px 520px at 85% -8%, rgba(214, 171, 92, 0.08), transparent 60%),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+    }
+
+    ::selection { background: rgba(214, 171, 92, 0.35); color: #fff; }
+
+    a { color: var(--gold); text-decoration: none; }
+    a:hover { color: var(--gold-light); text-decoration: underline; }
+    a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
+      outline: 2px solid var(--gold-light);
+      outline-offset: 3px;
     }
 
     /* Top Navigation */
     nav {
-      background: #0b1f33;
-      color: white;
+      background: #050505;
+      color: var(--text);
+      border-bottom: 1px solid var(--line);
     }
 
     .nav-inner {
       max-width: 1000px;
       margin: 0 auto;
-      padding: 14px 20px;
+      padding: 16px 20px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      font-size: 14px;
+      gap: 12px;
+      flex-wrap: wrap;
+      font-size: 12px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
     }
+
+    .nav-inner strong {
+      font-family: var(--serif);
+      font-size: 17px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      color: var(--gold);
+    }
+
+    .nav-inner a { font-weight: 600; color: var(--gold-light); }
 
     /* Header / Hero */
     header {
-      background: linear-gradient(135deg, var(--navy), #123a63);
-      color: white;
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 82% 45%, rgba(214, 171, 92, 0.16), transparent 52%),
+        linear-gradient(135deg, #0a0a0a 0%, #111010 55%, #060606 100%);
+      border-bottom: 1px solid var(--line);
+      color: var(--text);
+    }
+
+    /* soft "globe" and gold swoosh, echoing the business card */
+    header::before {
+      content: "";
+      position: absolute;
+      right: -150px;
+      top: -110px;
+      width: 480px;
+      height: 480px;
+      border-radius: 50%;
+      border: 1px solid rgba(214, 171, 92, 0.38);
+      background: radial-gradient(circle at 35% 35%, rgba(214, 171, 92, 0.12), transparent 62%);
+      box-shadow: inset 0 0 90px rgba(214, 171, 92, 0.08);
+      pointer-events: none;
+    }
+
+    header::after {
+      content: "";
+      position: absolute;
+      right: -90px;
+      bottom: -70px;
+      width: 560px;
+      height: 170px;
+      border-radius: 50%;
+      border-top: 3px solid rgba(214, 171, 92, 0.75);
+      transform: rotate(-16deg);
+      pointer-events: none;
     }
 
     .header-inner {
+      position: relative;
+      z-index: 1;
       max-width: 1000px;
       margin: 0 auto;
-      padding: 48px 20px;
+      padding: 64px 20px;
     }
 
     h1 {
       margin: 0;
-      font-size: 34px;
-      letter-spacing: 0.3px;
+      font-family: var(--serif);
+      font-weight: 700;
+      font-size: clamp(28px, 5.5vw, 46px);
+      line-height: 1.12;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gold);
+      background: var(--gold-grad);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
 
     .tagline {
-      margin-top: 10px;
-      font-size: 16px;
-      color: #dbeafe;
+      position: relative;
+      margin-top: 16px;
+      padding-top: 18px;
+      font-size: 12.5px;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    .tagline::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 72px;
+      height: 2px;
+      background: linear-gradient(90deg, var(--gold), transparent);
     }
 
     /* Layout */
@@ -71,29 +169,50 @@
       padding: 64px 20px;
     }
 
-    section {
-      margin-bottom: 90px;
-    }
+    section { margin-bottom: 90px; }
 
     h2 {
-      font-size: 25px;
-      margin-bottom: 18px;
-      color: var(--navy);
+      margin: 0 0 22px;
+      font-family: var(--serif);
+      font-weight: 600;
+      font-size: 30px;
+      letter-spacing: 0.04em;
+      color: var(--gold-light);
+    }
+
+    h2::after {
+      content: "";
+      display: block;
+      width: 56px;
+      height: 2px;
+      margin-top: 10px;
+      background: linear-gradient(90deg, var(--gold), transparent);
+    }
+
+    h3 {
+      margin: 0 0 8px;
+      font-family: var(--serif);
+      font-weight: 700;
+      font-size: 22px;
+      letter-spacing: 0.03em;
+      color: var(--gold);
     }
 
     p {
-      font-size: 15px;
-      color: var(--slate);
-      margin-bottom: 12px;
+      font-size: 15.5px;
+      color: var(--text);
+      margin: 0 0 12px;
     }
+
+    .note { font-size: 14px; color: var(--muted); }
 
     /* Cards */
     .card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 10px;
+      background: linear-gradient(180deg, var(--panel-2), var(--panel));
+      border: 1px solid var(--line);
+      border-radius: 8px;
       padding: 28px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.03);
     }
 
     .grid {
@@ -104,60 +223,87 @@
 
     ul {
       padding-left: 20px;
-      color: var(--slate);
-      font-size: 15px;
+      color: var(--text);
+      font-size: 15.5px;
     }
 
-    li {
-      margin-bottom: 10px;
-    }
+    li { margin-bottom: 10px; }
+    li::marker { color: var(--gold); }
 
     /* Contact / Form */
     label {
-      font-size: 13px;
+      font-size: 12px;
       font-weight: 600;
-      color: var(--navy);
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
     }
 
     input, textarea {
       width: 100%;
-      padding: 10px 12px;
+      padding: 11px 13px;
       margin: 6px 0 16px;
-      border: 1px solid #cbd5e1;
+      background: #0a0a09;
+      color: var(--text);
+      border: 1px solid rgba(214, 171, 92, 0.3);
       border-radius: 6px;
-      font-size: 14px;
-    }
-
-    button {
-      background: var(--blue);
-      color: white;
-      border: none;
-      padding: 12px 22px;
+      font-family: var(--sans);
       font-size: 15px;
-      border-radius: 6px;
+    }
+
+    input:focus, textarea:focus {
+      outline: none;
+      border-color: var(--gold);
+      box-shadow: 0 0 0 3px rgba(214, 171, 92, 0.2);
+    }
+
+    /* Gold buttons */
+    button, .btn {
+      display: inline-block;
+      background: linear-gradient(180deg, #f0d083 0%, #cf9f46 58%, #a77a2b 100%);
+      color: #0b0a08;
+      border: none;
+      padding: 13px 28px;
+      font-family: var(--sans);
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      border-radius: 4px;
       cursor: pointer;
+      text-decoration: none;
+      box-shadow: 0 6px 18px rgba(214, 171, 92, 0.18);
+      transition: filter 0.15s ease, transform 0.15s ease;
     }
 
-    button:hover {
-      background: #1d4ed8;
-    }
-
-    a {
-      color: var(--blue);
+    button:hover, .btn:hover {
+      color: #0b0a08;
+      filter: brightness(1.08);
       text-decoration: none;
     }
 
-    a:hover {
-      text-decoration: underline;
+    .btn { margin-top: 24px; }
+
+    @media (prefers-reduced-motion: no-preference) {
+      button:hover, .btn:hover { transform: translateY(-1px); }
     }
 
     /* Footer */
     footer {
-      background: #0b1f33;
-      color: #cbd5e1;
+      background: #050505;
+      color: var(--muted);
       text-align: center;
-      padding: 28px 20px;
-      font-size: 14px;
+      padding: 30px 20px;
+      font-size: 12.5px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      border-top: 1px solid var(--line);
+    }
+
+    @media (max-width: 600px) {
+      .header-inner { padding: 48px 20px; }
+      header::before { opacity: 0.55; right: -230px; }
+      header::after { opacity: 0.55; }
     }
   </style>
 </head>
@@ -167,7 +313,9 @@
 <nav>
   <div class="nav-inner">
     <strong>Jasam Global Trading LLC</strong>
-    <span><a href="shop.html" style="color:#dbeafe;font-weight:600;">Shop</a> &nbsp;·&nbsp; Wholesale Import & Export</span>
+    <span>
+      <!-- <a href="shop.html">Shop</a> &nbsp;·&nbsp;  -->
+      Wholesale Import & Export</span>
   </div>
 </nav>
 
@@ -176,7 +324,7 @@
     <div>
       <h1 style="margin:0;">Jasam Global Trading LLC</h1>
       <div class="tagline">Wholesale Import & Export · United States</div>
-      <a href="shop.html" style="display:inline-block;margin-top:20px;background:#1f4fd8;color:white;padding:12px 24px;border-radius:6px;font-size:15px;font-weight:600;text-decoration:none;">Shop our products →</a>
+      <!-- <a href="shop.html" class="btn">Shop our products →</a> -->
     </div>
   </div>
 </header>
@@ -194,7 +342,7 @@
         We collaborate with overseas manufacturers and suppliers to support
         compliant, transparent, and long-term trade relationships in the U.S. market.
       </p>
-      <p style="font-size:14px; color:#6b7280;">
+      <p class="note">
         Jasam Global Trading LLC is a limited liability company registered in the State of Missouri, United States.
       </p>
     </div>
@@ -209,7 +357,7 @@
         <li>Non-consumer retail operations</li>
         <li>Long-term supplier partnerships</li>
       </ul>
-      <p style="font-size:14px; color:#6b7280; margin-top:14px;">
+      <p class="note" style="margin-top:14px;">
         Currently onboarding suppliers and establishing long-term trade relationships.
       </p>
     </div>

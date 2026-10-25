@@ -2,9 +2,13 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Jasam Global Trading LLC</title>
+  <title>Jasam Global Trading LLC | Wholesale & Supplier Partnerships</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Jasam Global Trading LLC – U.S.-based wholesale import and export company." />
+  <meta name="description" content="Jasam Global Trading LLC is a Missouri-based trading company focused on wholesale sourcing, distribution, online retail, and supplier partnerships." />
+  <meta property="og:title" content="Jasam Global Trading LLC | Wholesale & Supplier Partnerships" />
+  <meta property="og:description" content="Wholesale sourcing, distribution, and supplier partnerships in the U.S. market." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://jasamglobaltrading.com/" />
   <meta name="theme-color" content="#070707" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -79,6 +83,16 @@
     }
 
     .nav-inner a { font-weight: 600; color: var(--gold-light); }
+    .nav-links { display:flex; align-items:center; gap:18px; flex-wrap:wrap; }
+    .nav-links a { font-size:11px; letter-spacing:.1em; }
+    .hero-copy { max-width: 760px; }
+    .hero-lead { max-width: 680px; margin-top: 22px; color: #e8e1d0; font-size: 17px; }
+    .hero-actions { display:flex; align-items:center; gap:14px; flex-wrap:wrap; margin-top:24px; }
+    .btn-secondary { display:inline-block; padding:12px 20px; border:1px solid var(--line); border-radius:4px; color:var(--gold-light); font-size:13px; font-weight:600; letter-spacing:.08em; text-transform:uppercase; }
+    .contact-link { overflow-wrap:anywhere; }
+    .form-note { color:var(--muted); font-size:13px; margin-top:8px; }
+    html { scroll-behavior:smooth; }
+    section[id] { scroll-margin-top:24px; }
 
     /* Header / Hero */
     header {
@@ -302,6 +316,12 @@
 
     @media (max-width: 600px) {
       .header-inner { padding: 48px 20px; }
+      .nav-inner { align-items:flex-start; }
+      .nav-links { gap:12px; }
+      .nav-links a { font-size:10px; }
+      .hero-lead { font-size:16px; }
+      h1 { letter-spacing:.04em; }
+      .tagline { letter-spacing:.14em; }
       header::before { opacity: 0.55; right: -230px; }
       header::after { opacity: 0.55; }
     }
@@ -320,51 +340,53 @@
 </nav>
 
 <header>
-  <div class="header-inner" style="display:flex; align-items:center; gap:16px;">
-    <div>
-      <h1 style="margin:0;">Jasam Global Trading LLC</h1>
-      <div class="tagline">Wholesale Import & Export · United States</div>
-      <!-- <a href="shop.html" class="btn">Shop our products →</a> -->
+  <div class="header-inner">
+    <div class="hero-copy">
+      <h1 style="margin:0;">Connecting Suppliers with Retail Opportunities</h1>
+      <div class="tagline">Wholesale Sourcing · Distribution · Supplier Partnerships</div>
+      <p class="hero-lead">Jasam Global Trading LLC works to build transparent, long-term relationships with brands, wholesalers, distributors, and manufacturers serving the U.S. market.</p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn">Discuss a Partnership</a>
+        <a href="#services" class="btn-secondary">Explore What We Do</a>
+      </div>
     </div>
   </div>
 </header>
 
 <main class="container">
 
-  <section>
-    <h2>About Us</h2>
+  <section id="about">
+    <h2>About Jasam</h2>
     <div class="card">
       <p>
-        Jasam Global Trading LLC is a Missouri-registered international trading
-        company engaged in wholesale import and export of general merchandise.
+        Jasam Global Trading LLC is a limited liability company registered in Missouri, United States, focused on wholesale sourcing, distribution, and general merchandise trade.
       </p>
       <p>
-        We collaborate with overseas manufacturers and suppliers to support
-        compliant, transparent, and long-term trade relationships in the U.S. market.
+        We welcome conversations with brands, wholesalers, distributors, and manufacturers interested in building transparent, professional, and long-term business relationships.
       </p>
       <p class="note">
-        Jasam Global Trading LLC is a limited liability company registered in the State of Missouri, United States.
+        We are actively developing supplier relationships and evaluating opportunities aligned with our business capabilities.
       </p>
     </div>
   </section>
 
-  <section>
-    <h2>Trade Scope</h2>
+  <section id="partners">
+    <h2>Supplier Partnerships</h2>
     <div class="card">
       <ul>
-        <li>Business-to-business wholesale transactions</li>
-        <li>International sourcing and distribution</li>
-        <li>Non-consumer retail operations</li>
-        <li>Long-term supplier partnerships</li>
+        <li>Wholesale purchasing and distribution opportunities</li>
+        <li>Brand, distributor, and manufacturer relationships</li>
+        <li>Product sourcing and catalog review</li>
+        <li>Online retail and general merchandise opportunities</li>
       </ul>
       <p class="note" style="margin-top:14px;">
-        Currently onboarding suppliers and establishing long-term trade relationships.
+        Have a product line or wholesale program to discuss? Contact us to start a conversation. Specific purchasing volumes and terms are discussed individually.
       </p>
     </div>
   </section>
 
-  <section>
-    <h2>Our Business Activities</h2>
+  <section id="services">
+    <h2>What We Do</h2>
     <div class="grid">
       <div class="card">
         <h3>Wholesale Trading</h3>
@@ -381,13 +403,17 @@
     </div>
   </section>
 
-  <section>
-    <h2>Contact</h2>
+  <section id="contact">
+    <h2>Contact & Inquiries</h2>
     <div class="grid">
       <div class="card">
         <p>
-          📍 Missouri, United States<br/>
-          📧 <a href="mailto:admin@jasamglobaltrading.com">admin@jasamglobaltrading.com</a>
+          <strong>Jasam Global Trading LLC</strong><br/>
+          Missouri, United States<br/>
+          Phone: <a class="contact-link" href="tel:+13475306232">+1 (347) 530-6232</a><br/>
+          Email: <a class="contact-link" href="mailto:admin@jasamglobaltrading.com">admin@jasamglobaltrading.com</a>
+        </p>
+        <p class="note">For wholesale, sourcing, or supplier partnership inquiries, please send us a message using the form. We will review your inquiry and respond if it aligns with our business needs.</p>
         </p>
       </div>
 
@@ -402,7 +428,8 @@
           <label for="message">Message</label>
           <textarea id="message" name="message" rows="4" required></textarea>
 
-          <button type="submit">Send Message</button>
+          <button type="submit">Send Inquiry</button>
+          <p class="form-note">Please include your company name and product or partnership details in your message.</p>
         </form>
       </div>
     </div>
@@ -411,8 +438,12 @@
 </main>
 
 <footer>
-  © Jasam Global Trading LLC · United States
+  © <span id="year">2026</span> Jasam Global Trading LLC · Missouri, United States
 </footer>
 
+<script>
+  const yearElement = document.getElementById('year');
+  if (yearElement) yearElement.textContent = new Date().getFullYear();
+</script>
 </body>
 </html>
